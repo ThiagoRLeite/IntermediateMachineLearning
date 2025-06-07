@@ -24,7 +24,7 @@ def score_dataset(X_train, X_valid, y_train, y_valid): # function to create a mo
 # simple solution, but usually less accurate
 
 cols_missing = [col for col in X_train.columns
-                    if X_train[col].isnull().any()] # make a list with the cols that contains missing values
+                    if X_train[col].isnull().any()] # make a list with the cols containing missing values
 rX_train = X_train.drop(cols_missing, axis=1) # drop the missing columns from training...
 rX_valid = X_valid.drop(cols_missing, axis=1) # ... and validation data
 print("MAE 1: ", score_dataset(rX_train, rX_valid, y_train, y_valid)) # print MAE from approach 1
