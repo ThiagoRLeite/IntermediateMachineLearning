@@ -7,7 +7,7 @@ file_path = "data/melb_data.csv" # filepath to the data
 data = pd.read_csv(file_path) # read data and put it into a DataFrame
 
 y = data.Price # select the prediction target
-X = data.drop(['Price'], axis=1).select_dtypes(exclude=['object']) # store the data on a variable droping the prediction target
+X = data.drop(['Price'], axis=1) # store the data on a variable droping the prediction target
 
 
 X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size=0.8, test_size=0.2, random_state=0) # split data into training and validation data
